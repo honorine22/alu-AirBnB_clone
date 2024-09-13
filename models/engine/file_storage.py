@@ -131,7 +131,7 @@ class FileStorage:
             inst.updated_at = datetime.utcnow()
             self.save()
 
-def reset(self):
+    def reset(self):
         """Resets the storage system to a clean state"""
         # Clear all objects from memory
         FileStorage.__objects.clear()
