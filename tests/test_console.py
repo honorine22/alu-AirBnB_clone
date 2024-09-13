@@ -17,9 +17,9 @@ class TestConsole(unittest.TestCase):
 
     def setUp(self):
         """Set up test environment"""
-        storage.reset()  # Assuming there is a method to reset the storage before each test
+        storage.reset()# Assuming there is a method to reset the storage before each test
 
-    def tearDown(self)  :
+    def tearDown(self):
         """Tear down test environment"""
         storage.reset()
 
@@ -47,7 +47,7 @@ class TestConsole(unittest.TestCase):
     #         output = f.getvalue().strip()
     #         self.assertTrue(len(output) > 0)
     #         self.assertTrue(output in storage.all(BaseModel).keys())
-    
+
     def test_show_missing_class(self):
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("show")
@@ -101,7 +101,7 @@ class TestConsole(unittest.TestCase):
     #     with patch('sys.stdout', new=StringIO()) as f:
     #         HBNBCommand().onecmd(f"destroy BaseModel {instance.id}")
     #         self.assertNotIn(instance.id, storage.all(BaseModel))
-    
+
     def test_all_no_class(self):
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("all")
@@ -134,7 +134,7 @@ class TestConsole(unittest.TestCase):
         instance.save()
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(f"update BaseModel {instance.id}")
-            self.assertEqual(f.getvalue().strip(), "** attribute name missing **")
+            self.assertEqual(f.getvalue().strip(), "**attribute name missing**")
 
     def test_update_missing_value(self):
         instance = BaseModel()
