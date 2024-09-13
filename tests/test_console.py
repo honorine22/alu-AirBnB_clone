@@ -15,9 +15,10 @@ from models.review import Review
 class TestConsole(unittest.TestCase):
 
 
+
     def setUp(self):
         """Set up test environment"""
-        storage.reset()# Assuming there is a method to reset the storage before each test
+        storage.reset()  # Assuming there is a method to reset the storage before each test
 
     def tearDown(self):
         """Tear down test environment"""
